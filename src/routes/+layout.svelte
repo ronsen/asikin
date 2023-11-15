@@ -1,9 +1,5 @@
 <script lang="ts">
-    import { page } from '$app/stores';
-
     import "../app.css";
-
-    let gl = $page.url.searchParams.get('gl') ?? 'ID';
 </script>
 
 <svelte:head>
