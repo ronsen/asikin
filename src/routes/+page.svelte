@@ -22,7 +22,7 @@
 
         <div>
             <h3 class="font-bold">
-                <a href={video.url}>{video.title}</a>
+                <a href="/watch?v={video.id}">{video.title}</a>
             </h3>
         </div>
     </div>
