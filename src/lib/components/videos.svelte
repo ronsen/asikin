@@ -37,7 +37,7 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
 
-        <h3 class="font-bold mb-4">{title}</h3>
+        <h3 class="font-bold text-lg mb-4">{title}</h3>
 
         <iframe
             src={embededUrl}
