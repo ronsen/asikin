@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
+    import { page } from '$app/stores';
+
     import "../app.css";
+
+    let gl = $page.url.searchParams.get('gl') ?? 'ID';
 </script>
 
 <svelte:head>
@@ -16,8 +20,7 @@
     <div class="flex-none">
         <form action="/" method="get">
             <div class="join">
-                <select name="gl" class="select select-bordered select-sm join-item w-full">
-                    <option value="">- Select -</option>
+                <select bind:value={gl} name="gl" class="select select-bordered select-sm join-item w-full">
                     <option value="AR">Argentina</option>
                     <option value="AU">Australia</option>
                     <option value="FR">France</option>
