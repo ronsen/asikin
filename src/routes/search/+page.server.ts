@@ -16,6 +16,7 @@ export const load = (async ({ url }) => {
             type: video.type,
             id: video.id,
             url: `https://www.youtube.com/watch?v=${video.id}`,
+            embededUrl: `https://www.youtube.com/embed/${video.id}`,
             title: video.title.text,
             thumbnail: {
                 url: video.thumbnails[0].url,

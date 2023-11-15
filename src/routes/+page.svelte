@@ -11,7 +11,7 @@
     }
 </script>
 
-<div class="mb-6">
+<div class="p-6">
     <form id="form" action="/" method="get">
         <select bind:value={gl} name="gl" class="select select-bordered w-full" on:change={change}>
             <option value="DZ">Algeria</option>
