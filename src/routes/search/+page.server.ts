@@ -2,7 +2,7 @@ import type { PageServerLoad } from './$types';
 import Innertube, { UniversalCache } from 'youtubei.js';
 
 export const load = (async ({ url }) => {
-    const q = url.searchParams.get('q') ?? '';
+    const q = String(url.searchParams.get('q')).trim();
 
     const youtube = await Innertube.create({
         lang: 'en',
