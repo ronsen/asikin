@@ -1,29 +1,35 @@
 <script lang="ts">
     import type { PageServerData } from "./$types";
+    import Videos from '$lib/components/videos.svelte';
 
     export let data: PageServerData;
+
+    let gl = data.gl;
 </script>
 
-<h2 class="text-lg font-bold border-b border-base-300 pb-4 mb-4">
-    <a href="/?gl={data.gl}">{data.gl}</a>
-</h2>
-
-{#each data.videos as video}
-    <div class="video flex flex-row items-start gap-4 border-b border-base-300 pb-4 mb-4">
-        <div class="flex-none">
-            <a href="/watch?v={video.id}"
-                ><img
-                    src={video.thumbnail.url}
-                    alt="[]"
-                    class="w-32 md:w-64 h-16 md:h-32 object-cover rounded"
-                /></a
-            >
+<div class="mb-6">
+    <form action="/" method="get">
+        <div class="join">
+            <select bind:value={gl} name="gl" class="select select-bordered join-item">
+                <option value="AR">Argentina</option>
+                <option value="AU">Australia</option>
+                <option value="FR">France</option>
+                <option value="JP">Japan</option>
+                <option value="IN">India</option>
+                <option value="ID">Indonesia</option>
+                <option value="IL">Israel</option>
+                <option value="MY">Malaysia</option>
+                <option value="RU">Russia</option>
+                <option value="SA">Saudi Arabia</option>
+                <option value="SG">Singapore</option>
+                <option value="PH">Philippines</option>
+                <option value="TH">Thailand</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+            </select>
+            <button class="btn btn-neutral join-item">Change</button>
         </div>
+    </form>
+</div>
 
-        <div>
-            <h3 class="font-bold">
-                <a href="/watch?v={video.id}">{video.title}</a>
-            </h3>
-        </div>
-    </div>
-{/each}
+<Videos videos={data.videos} />

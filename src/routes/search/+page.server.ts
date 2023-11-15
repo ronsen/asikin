@@ -1,17 +1,16 @@
 import type { PageServerLoad } from './$types';
-import { Innertube, UniversalCache } from 'youtubei.js';
+import Innertube, { UniversalCache } from 'youtubei.js';
 
 export const load = (async ({ url }) => {
-    const gl = url.searchParams.get('gl') ?? 'ID';
-    
+    const q = url.searchParams.get('q') ?? '';
+
     const youtube = await Innertube.create({
         lang: 'en',
         cache: new UniversalCache(false),
         generate_session_locally: true,
-        location: gl,
     });
 
-    const feed = await youtube.getTrending();
+    const feed = await youtube.search(q);
     const videos = feed.videos.map(video => {
         return {
             type: video.type,
@@ -25,5 +24,5 @@ export const load = (async ({ url }) => {
             },
         }
     });
-    return { gl, videos };
+    return { q, videos };
 }) satisfies PageServerLoad;
