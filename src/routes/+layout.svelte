@@ -1,5 +1,19 @@
 <script lang="ts">
+    import { page, navigating } from "$app/stores";
+    import NProgress from "nprogress";
+
     import "../app.css";
+    import 'nprogress/nprogress.css';
+
+    NProgress.configure({ minimum: 0.16 });
+    $: {
+        if ($navigating) {
+            NProgress.start();
+        }
+        if (!$navigating) {
+            NProgress.done();
+        }
+    }
 </script>
 
 <svelte:head>

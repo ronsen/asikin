@@ -23,5 +23,9 @@
 		"vite": "^4.4.2",
 		"youtubei.js": "^7.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@types/nprogress": "^0.2.3",
+		"nprogress": "^0.2.0"
+	}
 }
