@@ -20,14 +20,14 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="video flex flex-row items-start gap-4 border-b border-base-300 p-6 cursor-pointer hover:bg-base-300"
+		class="video md:flex gap-3 border-b border-base-300 p-6 cursor-pointer hover:bg-base-300"
 		on:click={() => watch(video)}
 	>
-		<div class="flex-none">
+		<div class="flex-none mb-2 md:mb-0">
 			<img
 				src={video.thumbnail.url}
 				alt="[]"
-				class="w-32 md:w-64 h-16 md:h-32 object-cover rounded"
+				class="w-full md:w-64 md:h-32 object-cover rounded"
 			/>
 		</div>
 		<div>
@@ -48,7 +48,7 @@
 	</div>
 {/each}
 
-<dialog bind:this={dialog} class="modal">
+<dialog bind:this={dialog} class="modal shadow">
 	<div class="modal-box max-w-5xl md:w-8/12">
 		<form method="dialog">
 			<button
