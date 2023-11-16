@@ -16,6 +16,8 @@
 	}
 
 	let showSearchForm = false;
+
+	
 </script>
 
 <svelte:head>
@@ -30,7 +32,10 @@
 		</a>
 	</div>
 	<div class="flex-none">
-		<button class="btn btn-sm btn-neutral" on:click={() => showSearchForm = !showSearchForm}>
+		<button
+			class="btn btn-sm btn-neutral"
+			on:click={() => (showSearchForm = !showSearchForm)}
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -52,7 +57,11 @@
 		id="search"
 		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 bg-base-300 rounded"
 	>
-		<form action="/search" method="get" on:submit={() => showSearchForm = false}>
+		<form
+			action="/search"
+			method="get"
+			on:submit={() => (showSearchForm = false)}
+		>
 			<div class="flex gap-3">
 				<input
 					type="text"
@@ -85,3 +94,21 @@
 		</svg>
 	</a>
 </footer>
+
+<div class="fixed right-4 bottom-4">
+	<button class="btn btn-neutral rounded-full shadow" on:click={() => document.body.scrollIntoView()}>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="16"
+			height="16"
+			fill="currentColor"
+			class="bi bi-chevron-up"
+			viewBox="0 0 16 16"
+		>
+			<path
+				fill-rule="evenodd"
+				d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+			/>
+		</svg>
+	</button>
+</div>
