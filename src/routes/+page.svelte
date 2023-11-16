@@ -6,13 +6,13 @@
 	let gl = data.gl;
 </script>
 
-<div class="flex justify-center p-6">
+<div class="p-6">
 	<form action="/" method="get">
-		<div class="join">
+		<div class="flex gap-3">
 			<select
 				bind:value={gl}
 				name="gl"
-				class="select select-bordered join-item"
+				class="select select-bordered w-full"
 			>
 				<option value="DZ">Algeria</option>
 				<option value="AR">Argentina</option>
@@ -122,9 +122,7 @@
 				<option value="YE">Yemen</option>
 				<option value="ZW">Zimbabwe</option>
 			</select>
-			<button type="submit" class="btn btn-neutral join-item"
-				>Change</button
-			>
+			<button type="submit" class="btn btn-neutral">Change</button>
 		</div>
 	</form>
 </div>
