@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageServerData } from "../$types";
+	import type { PageServerData } from "./$types";
 	import Videos from "$lib/components/videos.svelte";
 
 	export let data: PageServerData;
