@@ -30,7 +30,7 @@
 		</a>
 	</div>
 	<div class="flex-none">
-		<button class="btn btn-sm" on:click={() => showSearchForm = !showSearchForm}>
+		<button class="btn btn-sm btn-neutral" on:click={() => showSearchForm = !showSearchForm}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -50,7 +50,7 @@
 {#if showSearchForm}
 	<div
 		id="search"
-		class="absolute top-20 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 bg-base-300 rounded"
+		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 bg-base-300 rounded"
 	>
 		<form action="/search" method="get" on:submit={() => showSearchForm = false}>
 			<div class="flex gap-3">
