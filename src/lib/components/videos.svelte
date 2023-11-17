@@ -37,11 +37,17 @@
 				<div class="text-sm">{video.author.name}</div>
 			{/if}
 
-			{#if video.short_view_count}
+			{#if video.short_view_count || video.published}
 				<div class="inline-flex gap-2 text-xs">
-					<div>{video.short_view_count}</div>
+					{#if video.short_view_count}
+						<div>{video.short_view_count}</div>
+					{/if}
+					
 					<div>&bull;</div>
-					<div>{video.published}</div>
+
+					{#if video.published}
+						<div>{video.published}</div>
+					{/if}
 				</div>
 			{/if}
 		</div>
