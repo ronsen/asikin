@@ -38,7 +38,7 @@ export const countries = [
 	{ gl: "HU", name: "Hungary" },
 	{ gl: "IS", name: "Iceland" },
 	{ gl: "IN", name: "India" },
-	{ gl: "gl", name: "Indonesia" },
+	{ gl: "ID", name: "Indonesia" },
 	{ gl: "IQ", name: "Iraq" },
 	{ gl: "IE", name: "Ireland" },
 	{ gl: "IL", name: "Israel" },
