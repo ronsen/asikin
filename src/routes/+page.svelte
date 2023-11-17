@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageServerData } from "./$types";
 	import Videos from "$lib/components/videos.svelte";
-	import { countries } from "$lib/constants";
 
 	export let data: PageServerData;
 	let gl = data.gl;
@@ -15,8 +14,8 @@
 				name="gl"
 				class="select select-bordered w-full"
 			>
-				{#each data.countries as { gl, name }}
-					<option value={gl}>{name}</option>
+				{#each data.countries as country}
+					<option value={country.gl}>{country.name}</option>
 				{/each}
 			</select>
 
