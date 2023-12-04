@@ -59,6 +59,7 @@
 		<form method="dialog">
 			<button
 				class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+				aria-label="Close"
 				>✕</button
 			>
 		</form>
