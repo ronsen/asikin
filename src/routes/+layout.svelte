@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { navigating } from "$app/stores";
 	import NProgress from "nprogress";
+	import { slide } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	import "../app.css";
 	import "nprogress/nprogress.css";
@@ -54,6 +56,7 @@
 {#if showSearchForm}
 	<div
 		id="search"
+		transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'y' }}
 		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 bg-base-300 rounded"
 	>
 		<form
