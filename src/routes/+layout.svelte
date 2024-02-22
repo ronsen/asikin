@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Asikin</title>
+	<title>Asikin - YouTube Trending Videos</title>
 </svelte:head>
 
 <nav class="navbar bg-base-300">
