@@ -5,6 +5,10 @@
 	export let data: PageServerData;
 </script>
 
+<svelte:head>
+	<title>{data.channel.title}</title>
+</svelte:head>
+
 <div class="flex justify-between items-center gap-4">
 	<h2 class="text-lg font-bold border-b border-base-300 p-6">
 		<a href="/channel/{data.channel.external_id}">{data.channel.title}</a>

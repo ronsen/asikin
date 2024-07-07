@@ -3,12 +3,12 @@
 	let dialog: HTMLDialogElement;
 
 	let title = "";
-	let embededUrl = "";
+	let embeddedUrl = "";
 	let url = "";
 
 	function watch(video: any) {
 		title = video.title;
-		embededUrl = video.embededUrl;
+		embeddedUrl = video.embeddedUrl;
 		url = video.url;
 
 		dialog.showModal();
@@ -30,26 +30,24 @@
 		</div>
 		<div>
 			<h3 class="font-bold">
-				<button on:click={() => watch(video)}>{video.title}</button>
+				<button on:click={() => watch(video)} class="text-left">{video.title}</button>
 			</h3>
 
 			{#if video.author.name}
 				{#if video.author.id}
-					<div class="text-sm mt-1">
+					<div class="text-sm">
 						<a href="/channel/{video.author.id}">{video.author.name}</a>
 					</div>
 				{:else}
-					<div class="text-sm mt-1">{video.author.name}</div>
+					<div class="text-sm">{video.author.name}</div>
 				{/if}
 			{/if}
 
 			{#if video.short_view_count || video.published}
-				<div class="inline-flex gap-2 text-xs">
+				<div class="text-xs">
 					{#if video.short_view_count}
 						<div>{video.short_view_count}</div>
 					{/if}
-
-					<div>&bull;</div>
 
 					{#if video.published}
 						<div>{video.published}</div>
@@ -72,7 +70,7 @@
 		<h3 class="font-bold text-lg mb-4">{title}</h3>
 
 		<iframe
-			src={embededUrl}
+			src={embeddedUrl}
 			class="w-full aspect-video mb-4"
 			title="YouTube video player"
 			frameborder="0"

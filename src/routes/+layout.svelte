@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { navigating } from "$app/stores";
 	import NProgress from "nprogress";
-	import { slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { slide } from "svelte/transition";
+	import { quintOut } from "svelte/easing";
 
 	import "../app.css";
 	import "nprogress/nprogress.css";
@@ -32,31 +32,39 @@
 		</a>
 	</div>
 	<div class="flex-none">
-		<button
-			class="btn btn-sm btn-neutral"
-			aria-label="Search"
-			on:click={() => (showSearchForm = !showSearchForm)}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="16"
-				fill="currentColor"
-				class="bi bi-search"
-				viewBox="0 0 16 16"
+		<div class="inline-flex items-center text-sm gap-3">
+			<a href="/ythunt">YTHunt</a>
+			<button
+				class="btn btn-sm btn-neutral"
+				aria-label="Search"
+				on:click={() => (showSearchForm = !showSearchForm)}
 			>
-				<path
-					d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-				/>
-			</svg>
-		</button>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="bi bi-search"
+					viewBox="0 0 16 16"
+				>
+					<path
+						d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+					/>
+				</svg>
+			</button>
+		</div>
 	</div>
 </nav>
 
 {#if showSearchForm}
 	<div
 		id="search"
-		transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'y' }}
+		transition:slide={{
+			delay: 250,
+			duration: 300,
+			easing: quintOut,
+			axis: "y",
+		}}
 		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 bg-base-300 rounded"
 	>
 		<form
