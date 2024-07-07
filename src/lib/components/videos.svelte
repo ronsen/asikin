@@ -15,26 +15,32 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 {#each videos as video}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="video md:flex gap-3 border-b border-base-300 p-6 cursor-pointer hover:bg-base-300"
-		on:click={() => watch(video)}
+		class="video md:flex gap-3 border-b border-base-300 p-6 hover:bg-base-300"
 	>
 		<div class="flex-none mb-2 md:mb-0">
-			<img
-				src={video.thumbnail.url}
-				alt="[]"
-				class="w-full md:w-64 md:h-32 object-cover rounded"
-			/>
+			<button on:click={() => watch(video)}>
+				<img
+					src={video.thumbnail.url}
+					alt="[]"
+					class="w-full md:w-64 md:h-32 object-cover rounded"
+				/>
+			</button>
 		</div>
 		<div>
-			<h3 class="font-bold">{video.title}</h3>
+			<h3 class="font-bold">
+				<button on:click={() => watch(video)}>{video.title}</button>
+			</h3>
 
 			{#if video.author.name}
-				<div class="text-sm">{video.author.name}</div>
+				{#if video.author.id}
+					<div class="text-sm mt-1">
+						<a href="/channel/{video.author.id}">{video.author.name}</a>
+					</div>
+				{:else}
+					<div class="text-sm mt-1">{video.author.name}</div>
+				{/if}
 			{/if}
 
 			{#if video.short_view_count || video.published}
@@ -42,7 +48,7 @@
 					{#if video.short_view_count}
 						<div>{video.short_view_count}</div>
 					{/if}
-					
+
 					<div>&bull;</div>
 
 					{#if video.published}
@@ -59,8 +65,7 @@
 		<form method="dialog">
 			<button
 				class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-				aria-label="Close"
-				>✕</button
+				aria-label="Close">✕</button
 			>
 		</form>
 
