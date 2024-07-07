@@ -6,6 +6,10 @@
 	let gl = data.gl;
 </script>
 
+<svelte:head>
+	<title>Asikin - YouTube Trending Videos</title>
+</svelte:head>
+
 <div class="p-6">
 	<form action="/" method="get">
 		<div class="flex gap-3">
