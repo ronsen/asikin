@@ -84,7 +84,7 @@
 	</div>
 {/if}
 
-<main class="w-full md:w-4/5 mx-auto">
+<main class="w-full md:w-4/5 mx-auto p-6">
 	<slot />
 </main>
 

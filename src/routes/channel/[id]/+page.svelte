@@ -9,13 +9,15 @@
 	<title>{data.channel.title}</title>
 </svelte:head>
 
-<div class="flex justify-between items-center gap-4">
-	<h2 class="text-lg font-bold border-b border-base-300 p-6">
+<div
+	class="flex justify-between items-center gap-4 border-b border-base-300 pb-3 mb-6"
+>
+	<h2 class="text-lg font-bold">
 		<a href="/channel/{data.channel.external_id}">{data.channel.title}</a>
 	</h2>
 
 	<div>
-		<a href="{data.channel.vanity_channel_url}"
+		<a href={data.channel.vanity_channel_url}
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"

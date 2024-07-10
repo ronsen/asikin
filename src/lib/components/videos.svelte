@@ -16,27 +16,27 @@
 </script>
 
 {#each videos as video}
-	<div
-		class="video md:flex gap-3 border-b border-base-300 p-6 hover:bg-base-300"
-	>
+	<div class="video md:flex gap-3 border-b border-base-300 pb-3 mb-3">
 		<div class="flex-none mb-2 md:mb-0">
-			<button on:click={() => watch(video)}>
 				<img
 					src={video.thumbnail.url}
 					alt="[]"
-					class="w-full md:w-64 md:h-32 object-cover rounded"
+					class="w-full md:w-320px] md:h-[180px] object-cover rounded"
 				/>
-			</button>
 		</div>
 		<div>
 			<h3 class="font-bold">
-				<button on:click={() => watch(video)} class="text-left">{video.title}</button>
+				<button on:click={() => watch(video)} class="text-left"
+					>{video.title}</button
+				>
 			</h3>
 
 			{#if video.author.name}
 				{#if video.author.id}
 					<div class="text-sm">
-						<a href="/channel/{video.author.id}">{video.author.name}</a>
+						<a href="/channel/{video.author.id}"
+							>{video.author.name}</a
+						>
 					</div>
 				{:else}
 					<div class="text-sm">{video.author.name}</div>
