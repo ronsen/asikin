@@ -15,48 +15,74 @@
 	}
 </script>
 
-{#each videos as video}
-	<div class="video md:flex gap-3 border-b border-base-300 pb-3 mb-3">
-		<div class="flex-none mb-2 md:mb-0">
-				<img
-					src={video.thumbnail.url}
-					alt="[]"
-					class="w-full md:w-320px] md:h-[180px] object-cover rounded"
-				/>
-		</div>
-		<div>
-			<h3 class="font-bold">
-				<button on:click={() => watch(video)} class="text-left"
-					>{video.title}</button
-				>
-			</h3>
-
-			{#if video.author.name}
-				{#if video.author.id}
-					<div class="text-sm">
-						<a href="/channel/{video.author.id}"
-							>{video.author.name}</a
-						>
-					</div>
-				{:else}
-					<div class="text-sm">{video.author.name}</div>
-				{/if}
-			{/if}
-
-			{#if video.short_view_count || video.published}
-				<div class="text-xs">
-					{#if video.short_view_count}
-						<div>{video.short_view_count}</div>
-					{/if}
-
-					{#if video.published}
-						<div>{video.published}</div>
-					{/if}
+<div class="overflow-x-auto pb-3 mb-6">
+	<div class="inline-flex gap-3">
+		{#each videos as video}
+			{#if video.type == "ReelItem"}
+				<div class="video flex-shrink-0">
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+					<img
+						src={video.thumbnail.url}
+						on:click={() => watch(video)}
+						alt={video.title}
+						class="rounded w-[120px] cursor-pointer"
+					/>
 				</div>
 			{/if}
-		</div>
+		{/each}
 	</div>
-{/each}
+</div>
+
+<div class="mb-6">
+	{#each videos as video}
+		{#if video.type == "Video" || video.type == "GridVideo"}
+			<div class="video md:flex gap-3 border-b border-base-300 pb-3 mb-3">
+				<div class="flex-none mb-2 md:mb-0">
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+					<img
+						src={video.thumbnail.url}
+						on:click={() => watch(video)}
+						alt={video.title}
+						class="w-full md:w-320px] md:h-[180px] object-cover rounded cursor-pointer"
+					/>
+				</div>
+				<div>
+					<h3 class="font-bold">
+						<button on:click={() => watch(video)} class="text-left"
+							>{video.title}</button
+						>
+					</h3>
+
+					{#if video.author.name}
+						{#if video.author.id}
+							<div class="text-sm">
+								<a href="/channel/{video.author.id}"
+									>{video.author.name}</a
+								>
+							</div>
+						{:else}
+							<div class="text-sm">{video.author.name}</div>
+						{/if}
+					{/if}
+
+					{#if video.short_view_count || video.published}
+						<div class="text-xs">
+							{#if video.short_view_count}
+								<div>{video.short_view_count}</div>
+							{/if}
+
+							{#if video.published}
+								<div>{video.published}</div>
+							{/if}
+						</div>
+					{/if}
+				</div>
+			</div>
+		{/if}
+	{/each}
+</div>
 
 <dialog bind:this={dialog} class="modal shadow">
 	<div class="modal-box max-w-5xl md:w-8/12">
