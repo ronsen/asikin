@@ -4,8 +4,24 @@ import { Innertube, UniversalCache } from 'youtubei.js';
 import { getVideos } from '$lib';
 import { countries } from '$lib/constants';
 
-export const load = (async ({ url }) => {
-	const gl = url.searchParams.get('gl') ?? 'ID';
+export const load = (async ({ url, cookies }) => {
+	const setGeoLocation = () => {
+		let gl = url.searchParams.get('gl');
+
+		if (gl) {
+			cookies.set('gl', gl, {
+				path: '/',
+				maxAge: 60 * 60 * 24 * 365,
+			});
+		} else {
+			const glCookie = cookies.get('gl') as string;
+			gl = glCookie ?? 'ID';
+		}
+
+		return gl;
+	};
+
+	const gl = setGeoLocation();
 
 	try {
 		const youtube = await Innertube.create({
