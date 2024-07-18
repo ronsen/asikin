@@ -6,7 +6,12 @@ import * as cheerio from 'cheerio';
 export const load = (async () => {
 	try {
 		const url = 'https://www.ythunt.com/';
-		const response = await axios.get(url);
+		const response = await axios.get(url, {
+			headers: {
+				'User-Agent': 'Mozilla/5.0',
+				'Referer': 'https://www.google.com/',
+			}
+		});
 		const body = await response.data;
 		const $ = cheerio.load(body);
 
@@ -21,9 +26,10 @@ export const load = (async () => {
 				return match ? match[1] : null;
 			}
 
-			const videoId = getYouTubeVideoID(url);
+			const videoId = getYouTubeVideoID(url);	
 
 			return {
+				type: 'Video',
 				title: $(el).find('h1 a').text().trim(),
 				url: url,
 				embeddedUrl: `https://www.youtube.com/embed/${videoId}`,

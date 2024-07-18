@@ -15,25 +15,6 @@
 	}
 </script>
 
-<div class="overflow-x-auto pb-3 mb-6">
-	<div class="inline-flex gap-3">
-		{#each videos as video}
-			{#if video.type == "ReelItem"}
-				<div class="video flex-shrink-0">
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-					<img
-						src={video.thumbnail.url}
-						on:click={() => watch(video)}
-						alt={video.title}
-						class="rounded w-[120px] cursor-pointer"
-					/>
-				</div>
-			{/if}
-		{/each}
-	</div>
-</div>
-
 <div class="mb-6">
 	{#each videos as video}
 		{#if video.type == "Video" || video.type == "GridVideo"}
@@ -82,6 +63,28 @@
 			</div>
 		{/if}
 	{/each}
+</div>
+
+<div class="overflow-x-auto pb-3 mb-6">
+	<div class="inline-flex gap-3">
+		{#each videos as video}
+			{#if video.type == "ReelItem"}
+				<div class="video flex-shrink-0">
+					<div class="w-[240px]">
+						<!-- svelte-ignore a11y-click-events-have-key-events -->
+						<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+						<img
+							src={video.thumbnail.url}
+							on:click={() => watch(video)}
+							alt={video.title}
+							class="rounded w-full cursor-pointer"
+						/>
+						{video.title}
+					</div>
+				</div>
+			{/if}
+		{/each}
+	</div>
 </div>
 
 <dialog bind:this={dialog} class="modal shadow">
