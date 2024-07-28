@@ -96,8 +96,6 @@
 			>
 		</form>
 
-		<h3 class="font-bold text-lg mb-4">{title}</h3>
-
 		<iframe
 			src={embeddedUrl}
 			class="w-full aspect-video mb-4"
@@ -106,6 +104,8 @@
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			allowfullscreen
 		/>
+
+		<h3 class="font-bold text-lg mb-4">{title}</h3>
 
 		<a href={url} class="btn btn-netral w-full">Watch on YouTube</a>
 	</div>
