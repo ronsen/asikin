@@ -32,7 +32,7 @@ export const load = (async () => {
 				type: 'Video',
 				title: $(el).find('h1 a').text().trim(),
 				url: url,
-				embeddedUrl: `https://www.youtube.com/embed/${videoId}`,
+				embeddedUrl: `https://www.youtube.com/embed/${videoId}?autoplay=1`,
 				thumbnail: {
 					url: $(el).find('img').attr('src'),
 				},

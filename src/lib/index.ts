@@ -5,7 +5,7 @@ export function getVideos(videos: any) {
 			type: video.type,
 			id: video.id,
 			url: `https://www.youtube.com/watch?v=${video.id}`,
-			embeddedUrl: `https://www.youtube.com/embed/${video.id}`,
+			embeddedUrl: `https://www.youtube.com/embed/${video.id}?autoplay=1`,
 			title: video.title.text,
 			thumbnail: {
 				url: video.thumbnails ? video.thumbnails[0].url : 'https://placehold.co/600x400?text=Asikin',
