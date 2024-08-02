@@ -33,7 +33,6 @@
 	</div>
 	<div class="flex-none">
 		<div class="inline-flex items-center text-sm gap-3">
-			<a href="/ythunt">YTHunt</a>
 			<button
 				class="btn btn-sm btn-neutral"
 				aria-label="Search"
