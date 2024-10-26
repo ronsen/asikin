@@ -17,8 +17,8 @@
 
 <div class="mb-6">
 	{#each videos as video}
-		{#if video.type == "Video" || video.type == "GridVideo"}
-			<div class="video md:flex gap-3 border-b border-base-300 pb-3 mb-3">
+		{#if video.type === "Video" || video.type === 'GridVideo'}
+			<div class="video md:flex gap-3 border-b border-zinc-800 pb-3 mb-3">
 				<div class="flex-none mb-2 md:mb-0">
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
@@ -65,48 +65,39 @@
 	{/each}
 </div>
 
-<div class="overflow-x-auto pb-3 mb-6">
-	<div class="inline-flex gap-3">
-		{#each videos as video}
-			{#if video.type == "ReelItem"}
-				<div class="video flex-shrink-0">
-					<div class="w-[240px]">
-						<!-- svelte-ignore a11y-click-events-have-key-events -->
-						<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-						<img
-							src={video.thumbnail.url}
-							on:click={() => watch(video)}
-							alt={video.title}
-							class="rounded w-full cursor-pointer"
-						/>
-						{video.title}
-					</div>
-				</div>
-			{/if}
-		{/each}
-	</div>
-</div>
-
-<dialog bind:this={dialog} class="modal shadow">
-	<div class="modal-box max-w-5xl md:w-8/12">
+<dialog
+	bind:this={dialog}
+	class="max-w-5xl md:w-8/12 p-4 rounded-lg bg-zinc-900 text-white/90 shadow backdrop:backdrop-blur"
+>
+	<div class="">
 		<form method="dialog">
-			<button
-				class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-				aria-label="Close">✕</button
-			>
+			<button class="absolute right-2 top-2 z-10" aria-label="Close">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="bi bi-x-circle-fill"
+					viewBox="0 0 16 16"
+				>
+					<path
+						d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"
+					/>
+				</svg>
+			</button>
 		</form>
 
 		<iframe
 			src={embeddedUrl}
-			class="w-full aspect-video mb-4"
+			class="w-full aspect-video mb-3"
 			title="YouTube video player"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			allowfullscreen
 		/>
 
-		<h3 class="font-bold text-lg mb-4">{title}</h3>
-
-		<a href={url} class="btn btn-netral w-full">Watch on YouTube</a>
+		<h3 class="font-bold text-lg">
+			<a href={url} target="_blank">{title}</a>
+		</h3>
 	</div>
 </dialog>

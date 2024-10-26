@@ -9,7 +9,7 @@
 	<title>{data.q}</title>
 </svelte:head>
 
-<h2 class="text-lg font-bold border-b border-base-300 pb-3 mb-6">
+<h2 class="text-lg font-bold border-b border-zinc-700 pb-3 mb-6">
 	<a href="/search?q={data.q}">{data.q}</a>
 </h2>
 

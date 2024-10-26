@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div
-	class="flex justify-between items-center gap-4 border-b border-base-300 pb-3 mb-6"
+	class="flex justify-between items-center gap-4 border-b border-zinc-700 pb-3 mb-6"
 >
 	<h2 class="text-lg font-bold">
 		<a href="/channel/{data.channel.external_id}">{data.channel.title}</a>

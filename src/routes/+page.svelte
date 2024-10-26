@@ -10,21 +10,24 @@
 	<title>Asikin - YouTube Trending Videos</title>
 </svelte:head>
 
-<form action="/" method="get" class="mb-6">
+<form action="/" class="mb-6" method="get">
 	<div class="flex gap-3">
-		<label for="gl" class="sr-only">Select a country:</label>
+		<label class="sr-only" for="gl">Select a country:</label>
 		<select
-			id="gl"
 			bind:value={gl}
+			class="p-2 rounded-lg bg-white border text-black w-full focus:outline-none"
+			id="gl"
 			name="gl"
-			class="select select-bordered w-full"
 		>
 			{#each data.countries as country}
 				<option value={country.gl}>{country.name}</option>
 			{/each}
 		</select>
 
-		<button type="submit" class="btn btn-neutral">Change</button>
+		<button
+			class="p-2 bg-white rounded-lg text-black hover:bg-gray-100"
+			type="submit">Change</button
+		>
 	</div>
 </form>
 

@@ -24,9 +24,11 @@
 	<title>Asikin - YouTube Trending Videos</title>
 </svelte:head>
 
-<nav class="navbar bg-base-300">
-	<div class="flex-1">
-		<a href="/" class="btn btn-ghost text-xl">
+<nav
+	class="flex justify-between items-center bg-black/90 shadow px-6 py-3 gap-3"
+>
+	<div>
+		<a href="/" class="inline-flex items-center text-xl">
 			<img src="/logo.png" alt="[]" class="w-6 h-6" />
 			Asikin
 		</a>
@@ -64,7 +66,7 @@
 			easing: quintOut,
 			axis: "y",
 		}}
-		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 bg-base-300 rounded"
+		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 rounded bg-black/90"
 	>
 		<form
 			action="/search"
@@ -75,9 +77,13 @@
 				<input
 					type="text"
 					name="q"
-					class="input input-bordered w-full"
+					class="p-2 border text-black bg-white rounded-lg w-full"
 				/>
-				<button type="submit" class="btn btn-neutral">Search</button>
+				<button
+					type="submit"
+					class="p-2 bg-white text-black border rounded-lg hover:bg-gray-100"
+					>Search</button
+				>
 			</div>
 		</form>
 	</div>
