@@ -27,12 +27,7 @@
 <nav
 	class="flex justify-between items-center bg-black/90 shadow px-6 py-3 gap-3"
 >
-	<div>
-		<a href="/" class="inline-flex items-center text-xl">
-			<img src="/logo.png" alt="[]" class="w-6 h-6" />
-			Asikin
-		</a>
-	</div>
+	<a href="/" class="text-xl">Asikin</a>
 	<div class="flex-none">
 		<div class="inline-flex items-center text-sm gap-3">
 			<button
@@ -66,7 +61,7 @@
 			easing: quintOut,
 			axis: "y",
 		}}
-		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 rounded bg-black/90"
+		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 rounded-b-lg shadow bg-black/90"
 	>
 		<form
 			action="/search"
@@ -77,11 +72,11 @@
 				<input
 					type="text"
 					name="q"
-					class="p-2 border text-black bg-white rounded-lg w-full"
+					class="px-3 py-2 bg-zinc-800 text-sm rounded-lg border border-zinc-500 text-white hover:bg-zinc-700 w-full"
 				/>
 				<button
 					type="submit"
-					class="p-2 bg-white text-black border rounded-lg hover:bg-gray-100"
+					class="px-3 py-2 bg-zinc-800 text-sm rounded-lg border border-zinc-500 text-white hover:bg-zinc-700"
 					>Search</button
 				>
 			</div>
@@ -107,13 +102,12 @@
 				d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
 			/>
 		</svg>
-		<span class="sr-only">Hello!</span>
 	</a>
 </footer>
 
 <div class="fixed right-4 bottom-4">
 	<button
-		class="btn btn-neutral rounded-full shadow"
+		class="p-3 bg-zinc-900 text-sm border border-zinc-600 text-white/90 hover:bg-zinc-800 rounded-full shadow"
 		aria-label="Up"
 		on:click={() => document.body.scrollIntoView()}
 	>

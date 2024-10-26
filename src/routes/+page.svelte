@@ -15,7 +15,7 @@
 		<label class="sr-only" for="gl">Select a country:</label>
 		<select
 			bind:value={gl}
-			class="p-2 rounded-lg bg-white border text-black w-full focus:outline-none"
+			class="px-3 py-2 text-sm rounded-lg border border-zinc-500 text bg-zinc-800 hover:bg-zinc-700 w-full"
 			id="gl"
 			name="gl"
 		>
@@ -25,7 +25,7 @@
 		</select>
 
 		<button
-			class="p-2 bg-white rounded-lg text-black hover:bg-gray-100"
+			class="px-3 py-2 bg-zinc-800 text-sm rounded-lg border border-zinc-500 text-white hover:bg-zinc-700"
 			type="submit">Change</button
 		>
 	</div>
