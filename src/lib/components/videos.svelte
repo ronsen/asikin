@@ -67,7 +67,7 @@
 
 <dialog
 	bind:this={dialog}
-	class="max-w-5xl md:w-8/12 p-4 rounded-lg bg-zinc-900 text-white/90 shadow backdrop:backdrop-blur"
+	class="w-full md:w-8/12 p-4 rounded-lg bg-zinc-900 text-white/90 shadow backdrop:backdrop-blur"
 >
 	<div class="">
 		<form method="dialog">

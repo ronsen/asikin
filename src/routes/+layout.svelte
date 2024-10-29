@@ -31,7 +31,7 @@
 	<div class="flex-none">
 		<div class="inline-flex items-center text-sm gap-3">
 			<button
-				class="btn btn-sm btn-neutral"
+				class="hover:text-white"
 				aria-label="Search"
 				on:click={() => (showSearchForm = !showSearchForm)}
 			>
@@ -68,15 +68,15 @@
 			method="get"
 			on:submit={() => (showSearchForm = false)}
 		>
-			<div class="flex gap-3">
+			<div class="inline-flex items-center w-full">
 				<input
 					type="text"
 					name="q"
-					class="px-3 py-2 bg-zinc-800 text-sm rounded-lg border border-zinc-500 text-white hover:bg-zinc-700 w-full"
+					class="px-3 py-2 bg-zinc-800 text-sm rounded-l-lg border border-r-0 border-zinc-500 text-white hover:bg-zinc-700 w-full focus:outline-none"
 				/>
 				<button
 					type="submit"
-					class="px-3 py-2 bg-zinc-800 text-sm rounded-lg border border-zinc-500 text-white hover:bg-zinc-700"
+					class="px-3 py-2 bg-zinc-800 text-sm rounded-r-lg border border-zinc-500 text-white hover:bg-zinc-700"
 					>Search</button
 				>
 			</div>
