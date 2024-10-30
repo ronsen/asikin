@@ -17,6 +17,7 @@
 	</h2>
 
 	<div>
+		<!-- svelte-ignore a11y_consider_explicit_label -->
 		<a href={data.channel.vanity_channel_url}
 			><svg
 				xmlns="http://www.w3.org/2000/svg"

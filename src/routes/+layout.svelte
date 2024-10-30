@@ -5,19 +5,18 @@
 	import { quintOut } from "svelte/easing";
 
 	import "../app.css";
-	import "nprogress/nprogress.css";
+	import 'nprogress/nprogress.css';
+
+	let { children } = $props();
 
 	NProgress.configure({ minimum: 0.16 });
-	$: {
+	$effect(() => {
 		if ($navigating) {
 			NProgress.start();
-		}
-		if (!$navigating) {
-			NProgress.done();
-		}
-	}
+		} else NProgress.done();
+	});
 
-	let showSearchForm = false;
+	let showSearchForm = $state(false);
 </script>
 
 <svelte:head>
@@ -33,7 +32,7 @@
 			<button
 				class="hover:text-white"
 				aria-label="Search"
-				on:click={() => (showSearchForm = !showSearchForm)}
+				onclick={() => (showSearchForm = !showSearchForm)}
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +65,7 @@
 		<form
 			action="/search"
 			method="get"
-			on:submit={() => (showSearchForm = false)}
+			onsubmit={() => (showSearchForm = false)}
 		>
 			<div class="inline-flex items-center gap-3 w-full">
 				<input
@@ -85,10 +84,11 @@
 {/if}
 
 <main class="w-full md:w-4/5 mx-auto p-6">
-	<slot />
+	{@render children()}
 </main>
 
 <footer class="flex justify-center my-6">
+	<!-- svelte-ignore a11y_consider_explicit_label -->
 	<a href="https://s.id/ronsen" target="_blank">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@
 	<button
 		class="p-3 bg-zinc-900 text-sm border border-zinc-600 text-white/90 hover:bg-zinc-800 rounded-full shadow"
 		aria-label="Up"
-		on:click={() => document.body.scrollIntoView()}
+		onclick={() => document.body.scrollIntoView()}
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
