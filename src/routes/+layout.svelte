@@ -68,15 +68,15 @@
 			method="get"
 			on:submit={() => (showSearchForm = false)}
 		>
-			<div class="inline-flex items-center w-full">
+			<div class="inline-flex items-center gap-3 w-full">
 				<input
 					type="text"
 					name="q"
-					class="px-3 py-2 bg-zinc-800 text-sm rounded-l-lg border border-r-0 border-zinc-500 text-white hover:bg-zinc-700 w-full focus:outline-none"
+					class="border border-zinc-700 focus:outline-none bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm p-2 text-white w-full"
 				/>
 				<button
 					type="submit"
-					class="px-3 py-2 bg-zinc-800 text-sm rounded-r-lg border border-zinc-500 text-white hover:bg-zinc-700"
+					class="border border-zinc-700 focus:outline-none bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm p-2 text-white"
 					>Search</button
 				>
 			</div>
