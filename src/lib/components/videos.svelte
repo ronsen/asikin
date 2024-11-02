@@ -1,10 +1,11 @@
 <script lang="ts">
-	export let videos: any;
+	let { videos }: { videos: any } = $props();
+
 	let dialog: HTMLDialogElement;
 
-	let title = "";
-	let embeddedUrl = "";
-	let url = "";
+	let title = $state("");
+	let embeddedUrl = $state("");
+	let url = $state("");
 
 	function watch(video: any) {
 		title = video.title;
@@ -20,18 +21,16 @@
 		{#if video.type === "Video" || video.type === 'GridVideo'}
 			<div class="video md:flex gap-3 border-b border-zinc-800 pb-3 mb-3">
 				<div class="flex-none mb-2 md:mb-0">
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 					<img
 						src={video.thumbnail.url}
-						on:click={() => watch(video)}
+						onclick={() => watch(video)}
 						alt={video.title}
 						class="w-full md:w-320px] md:h-[180px] object-cover rounded cursor-pointer"
 					/>
 				</div>
 				<div>
 					<h3 class="font-bold">
-						<button on:click={() => watch(video)} class="text-left"
+						<button onclick={() => watch(video)} class="text-left"
 							>{video.title}</button
 						>
 					</h3>

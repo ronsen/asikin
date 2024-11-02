@@ -2,7 +2,7 @@
 	import type { PageServerData } from "./$types";
 	import Videos from "$lib/components/videos.svelte";
 
-	export let data: PageServerData;
+	let { data }: { data: PageServerData } = $props();
 </script>
 
 <svelte:head>
