@@ -11,6 +11,7 @@
 	let { children }: { children: Snippet } = $props();
 
 	NProgress.configure({ minimum: 0.16 });
+	
 	$effect(() => {
 		if ($navigating) {
 			NProgress.start();
@@ -74,11 +75,11 @@
 				<input
 					type="text"
 					name="q"
-					class="border border-zinc-700 focus:outline-none bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm p-2 text-white w-full"
+					class="form-input border border-zinc-700 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm text-white w-full"
 				/>
 				<button
 					type="submit"
-					class="border border-zinc-700 focus:outline-none bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm p-2 text-white"
+					class="border border-zinc-700  bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm p-2 text-white"
 					>Search</button
 				>
 			</div>
