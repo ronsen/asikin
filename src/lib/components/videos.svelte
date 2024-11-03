@@ -21,6 +21,8 @@
 		{#if video.type === "Video" || video.type === 'GridVideo'}
 			<div class="video md:flex gap-3 border-b border-zinc-800 pb-3 mb-3">
 				<div class="flex-none mb-2 md:mb-0">
+					<!-- svelte-ignore a11y_click_events_have_key_events -->
+					<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 					<img
 						src={video.thumbnail.url}
 						onclick={() => watch(video)}
