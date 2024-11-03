@@ -86,6 +86,7 @@
 			</button>
 		</form>
 
+		<!-- svelte-ignore element_invalid_self_closing_tag -->
 		<iframe
 			src={embeddedUrl}
 			class="w-full aspect-video mb-3"

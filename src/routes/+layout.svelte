@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from "svelte";
 	import { navigating } from "$app/stores";
 	import NProgress from "nprogress";
 	import { slide } from "svelte/transition";
@@ -7,13 +8,15 @@
 	import "../app.css";
 	import 'nprogress/nprogress.css';
 
-	let { children } = $props();
+	let { children }: { children: Snippet } = $props();
 
 	NProgress.configure({ minimum: 0.16 });
 	$effect(() => {
 		if ($navigating) {
 			NProgress.start();
-		} else NProgress.done();
+		} else {
+			NProgress.done();
+		}
 	});
 
 	let showSearchForm = $state(false);
