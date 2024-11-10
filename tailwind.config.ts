@@ -1,12 +1,10 @@
 import type { Config } from 'tailwindcss';
-import formsPlugin from '@tailwindcss/forms';
+import forms from '@tailwindcss/forms';
 
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {}
 	},
-	plugins: [
-		formsPlugin({ strategy: 'class' })
-	]
+	plugins: [forms]
 } satisfies Config;
