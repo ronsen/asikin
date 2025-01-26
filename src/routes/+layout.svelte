@@ -28,7 +28,7 @@
 </svelte:head>
 
 <nav
-	class="flex justify-between items-center bg-black/90 shadow px-6 py-3 gap-3"
+	class="flex justify-between items-center bg-black/90 shadow-sm px-6 py-3 gap-3"
 >
 	<a href="/" class="text-xl">Asikin</a>
 	<div class="flex-none">
@@ -64,7 +64,7 @@
 			easing: quintOut,
 			axis: "y",
 		}}
-		class="absolute top-19 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 rounded-b-lg shadow bg-black/90"
+		class="absolute top-12 left-1/2 transform -translate-x-1/2 w-full md:w-3/5 p-6 rounded-b-lg shadow-sm bg-black/90"
 	>
 		<form
 			action="/search"
@@ -111,7 +111,7 @@
 
 <div class="fixed right-4 bottom-4">
 	<button
-		class="p-3 bg-zinc-900 text-sm border border-zinc-600 text-white/90 hover:bg-zinc-800 rounded-full shadow"
+		class="p-3 bg-zinc-900 text-sm border border-zinc-600 text-white/90 hover:bg-zinc-800 rounded-full shadow-sm"
 		aria-label="Up"
 		onclick={() => document.body.scrollIntoView()}
 	>

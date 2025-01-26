@@ -18,7 +18,7 @@
 
 <div class="mb-6">
 	{#each videos as video}
-		{#if video.type === "Video" || video.type === 'GridVideo'}
+		{#if video.type === "Video" || video.type === "GridVideo"}
 			<div class="video md:flex gap-3 border-b border-zinc-800 pb-3 mb-3">
 				<div class="flex-none mb-2 md:mb-0">
 					<!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -27,12 +27,12 @@
 						src={video.thumbnail.url}
 						onclick={() => watch(video)}
 						alt={video.title}
-						class="w-full md:w-320px] md:h-[180px] object-cover rounded cursor-pointer"
+						class="w-full md:w-320px] md:h-[180px] object-cover rounded-sm cursor-pointer"
 					/>
 				</div>
 				<div>
 					<h3 class="font-bold">
-						<button onclick={() => watch(video)} class="text-left"
+						<button onclick={() => watch(video)} class="text-left cursor-pointer"
 							>{video.title}</button
 						>
 					</h3>
@@ -68,7 +68,7 @@
 
 <dialog
 	bind:this={dialog}
-	class="w-full md:w-8/12 p-4 rounded-lg bg-zinc-900 text-white/90 shadow backdrop:backdrop-blur"
+	class="w-full m-auto md:w-8/12 p-4 rounded-lg bg-zinc-900 text-white/90 shadow-sm backdrop:backdrop-blur-sm"
 >
 	<div class="">
 		<form method="dialog">
