@@ -93,7 +93,7 @@
 
 <footer class="flex justify-center my-6">
 	<!-- svelte-ignore a11y_consider_explicit_label -->
-	<a href="https://s.id/ronsen" target="_blank">
+	<a href="https://dub.sh/ronsen?utm_source=asikin" target="_blank">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="16"
