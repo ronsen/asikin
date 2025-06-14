@@ -3,7 +3,7 @@
 YouTube Trending Videos
 
 
-#### Instalation
+#### Installation
 
 ```bash
 npm install
