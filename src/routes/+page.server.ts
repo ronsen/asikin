@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { Innertube, UniversalCache } from 'youtubei.js';
+import { ClientType, Innertube, UniversalCache } from 'youtubei.js';
 import { getVideos } from '$lib';
 import { countries } from '$lib/constants';
 
@@ -29,9 +29,12 @@ export const load = (async ({ url, cookies }) => {
 			cache: new UniversalCache(false),
 			generate_session_locally: true,
 			location: gl,
+			client_type: ClientType.WEB,
 		});
 
-		const feed = await youtube.getTrending();
+		// const feed = await youtube.getTrending();
+		const feed = await youtube.getHomeFeed();
+		
 		const videos = getVideos(feed.videos);
 
 		return { gl, countries, videos };

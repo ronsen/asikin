@@ -4,7 +4,7 @@
 
 	let { data }: { data: PageServerData } = $props();
 
-	let gl = $state(data.gl);
+	let gl = $derived(data?.gl);
 </script>
 
 <svelte:head>
